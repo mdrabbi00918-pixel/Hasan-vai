@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hasan Vai - Social Media Service">
+<meta name="theme-color" content="#070912">
+<title>Hasan Vai | Social Media Service</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:
+    radial-gradient(circle at 10% 5%,rgba(124,92,255,.18),transparent 28%),
+    radial-gradient(circle at 90% 15%,rgba(0,210,255,.10),transparent 25%),
+    #070912;
+  color:#fff;line-height:1.6;overflow-x:hidden
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:40px 40px
+}
+a{text-decoration:none;color:inherit}button{font-family:inherit}
+.nav{position:sticky;top:0;z-index:1000;background:rgba(7,9,18,.75);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.navin{max-width:1150px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:900}.logo span{background:linear-gradient(135deg,#9c7cff,#5ee7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a{margin-left:22px;color:#b9c1d7;font-size:14px;font-weight:700;transition:.2s}nav a:hover{color:#fff}
+.hero{max-width:1150px;min-height:650px;margin:auto;padding:80px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.badge{display:inline-block;padding:8px 15px;border:1px solid rgba(124,92,255,.35);border-radius:50px;color:#c9c2ff;background:rgba(124,92,255,.08);margin-bottom:22px;font-size:13px;font-weight:800}
+h1{font-size:clamp(45px,7vw,78px);line-height:1.02;letter-spacing:-3px;margin-bottom:22px}
+h1 span{background:linear-gradient(135deg,#8b6cff,#b78cff,#5ee7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#a5aec4;font-size:18px;max-width:650px;line-height:1.8}
+.btns{margin-top:32px;display:flex;gap:13px;flex-wrap:wrap}
+.btn{padding:13px 20px;border-radius:13px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;cursor:pointer;transition:.25s}
+.btn:hover{transform:translateY(-3px)}
+.primary{color:#fff;background:linear-gradient(135deg,#7657ff,#9b72ff);box-shadow:0 10px 30px rgba(124,92,255,.25)}
+.primary:hover{box-shadow:0 15px 40px rgba(124,92,255,.4)}
+.secondary{border:1px solid rgba(255,255,255,.13);color:#dce2f2;background:rgba(255,255,255,.035)}
+.secondary:hover{background:rgba(255,255,255,.08)}
+.photo{width:100%;max-width:410px;margin:auto;border-radius:30px;border:1px solid rgba(255,255,255,.12);padding:7px;background:linear-gradient(135deg,rgba(124,92,255,.3),rgba(94,231,255,.12),transparent);box-shadow:0 30px 100px rgba(124,92,255,.22);display:block;animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+section{max-width:1150px;margin:auto;padding:80px 20px}
+.title{text-align:center;margin-bottom:38px}.title h2{font-size:38px;letter-spacing:-1px;margin-bottom:7px}.title p{color:#8993aa;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:27px;transition:.3s;box-shadow:0 15px 45px rgba(0,0,0,.18)}
+.card:before{content:"";position:absolute;width:100px;height:100px;top:-50px;right:-50px;background:#7c5cff;filter:blur(55px);opacity:.16;transition:.3s}
+.card:hover{transform:translateY(-7px);border-color:rgba(124,92,255,.5);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.card:hover:before{opacity:.3}
+.icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:25px;margin-bottom:17px;border-radius:15px;background:rgba(124,92,255,.1);border:1px solid rgba(124,92,255,.15)}
+.card h3{font-size:20px;margin-bottom:7px}.card p{color:#8e98ae;font-size:14px;line-height:1.7}
+.card .btn{margin-top:17px}.price{margin-top:13px;font-size:24px;color:#b9aaff;font-weight:900}
+#imo-diamond .card,#instagram .card,#tiktok .card,#youtube .card,#whatsapp .card,#telegram .card,#twitch .card{background:linear-gradient(145deg,rgba(124,92,255,.09),rgba(255,255,255,.025))}
+.contact{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 0%,rgba(124,92,255,.22),transparent 55%),rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.1);border-radius:30px;text-align:center;padding:65px 20px;box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.contact h2{font-size:34px}.contact p{color:#929cb2}
+footer{text-align:center;color:#68738b;padding:35px 20px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
+#orderModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:99999;align-items:center;justify-content:center;padding:20px}
+.order-box{width:100%;max-width:390px;background:linear-gradient(145deg,#151a2b,#0d111e);border:1px solid rgba(255,255,255,.12);border-radius:25px;padding:30px 22px 24px;text-align:center;box-shadow:0 30px 100px rgba(0,0,0,.7);animation:popup .25s ease}
+@keyframes popup{from{opacity:0;transform:scale(.9) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.order-box h2{font-size:27px;margin-bottom:5px}.order-box p{color:#929cb3;margin-bottom:22px;font-size:14px}
+.order-option{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;border-radius:14px;margin:11px 0;font-weight:800;transition:.25s}
+.order-option:hover{transform:translateY(-2px)}
+.imo{background:linear-gradient(135deg,#7657ff,#9a70ff)}.whatsapp{background:linear-gradient(135deg,#16c765,#2be477)}
+.close-btn{margin-top:10px;background:rgba(255,255,255,.04);color:#cbd2e2;border:1px solid rgba(255,255,255,.12);padding:11px 25px;border-radius:11px;cursor:pointer;font-size:14px}
+.close-btn:hover{background:rgba(255,255,255,.08)}
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:55px;gap:45px}
+  .hero p{margin:auto;font-size:16px}.grid{grid-template-columns:1fr 1fr}nav{display:none}.photo{max-width:320px}
+  section{padding:65px 16px}.title h2{font-size:30px}
+}
+@media(max-width:520px){
+  .grid{grid-template-columns:1fr}.card{padding:23px}.title h2{font-size:28px}.contact{padding:48px 18px}.contact h2{font-size:28px}
+  .btn{padding:12px 17px}.hero{padding-left:15px;padding-right:15px}section{padding-left:15px;padding-right:15px}h1{font-size:45px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="navin">
+<div class="logo">Hasan <span>Vai</span></div>
+<nav><a href="#services">Services</a><a href="#imo-diamond">Price</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<section class="hero">
+<div>
+<div class="badge">⚡ Trusted Social Media Service</div>
+<h1>Welcome to <span>Hasan Vai</span></h1>
+<p>imo ও Social Media-এর বিভিন্ন সার্ভিস সহজে অর্ডার করুন। দ্রুত যোগাযোগ, পরিষ্কার মূল্য এবং মোবাইল-ফ্রেন্ডলি সার্ভিস পেজ।</p>
+<div class="btns">
+<a class="btn primary" href="#services">🚀 Services দেখুন</a>
+<a class="btn secondary" href="#contact">📞 Order করুন</a>
+</div>
+</div>
+<img class="photo" src="hasan.png" alt="Hasan Vai" onerror="this.style.display='none'">
+</section>
+
+<section id="services">
+<div class="title"><h2>আমাদের Services</h2><p>যে সার্ভিস চান সেটি বেছে নিয়ে দাম দেখুন এবং অর্ডার করুন</p></div>
+<div class="grid">
+<div class="card"><div class="icon">💎</div><h3>imo Service</h3><p>সব imo Diamond প্যাকেজ ও দাম দেখুন এবং সরাসরি অর্ডার করুন।</p><a class="btn primary" href="#imo-diamond">💎 Diamond Price দেখুন</a></div>
+<div class="card"><div class="icon">📸</div><h3>Instagram</h3><p>Instagram Followers service</p><a class="btn primary" href="#instagram">📸 Price দেখুন</a></div>
+<div class="card"><div class="icon">🎵</div><h3>TikTok</h3><p>TikTok Followers service</p><a class="btn primary" href="#tiktok">🎵 Price দেখুন</a></div>
+<div class="card"><div class="icon">▶️</div><h3>YouTube</h3><p>Comment ও Subscribe service</p><a class="btn primary" href="#youtube">▶️ Price দেখুন</a></div>
+<div class="card"><div class="icon">💬</div><h3>WhatsApp</h3><p>Channel Member service</p><a class="btn primary" href="#whatsapp">💬 Price দেখুন</a></div>
+<div class="card"><div class="icon">✈️</div><h3>Telegram</h3><p>Channel Member service</p><a class="btn primary" href="#telegram">✈️ Price দেখুন</a></div>
+<div class="card"><div class="icon">🎮</div><h3>Twitch</h3><p>Twitch Followers service</p><a class="btn primary" href="#twitch">🎮 Price দেখুন</a></div>
+</div></section>
+
+<section id="imo-diamond"><div class="title"><h2>💎 imo Diamond Price</h2><p>পছন্দের Diamond প্যাকেজ বেছে নিয়ে সরাসরি অর্ডার করুন</p></div><div class="grid">
+<div class="card"><div class="icon">📦</div><h3>💎 10 Diamond</h3><div class="price">৳25</div><button class="btn primary" onclick="openOrder('আমি imo 10 Diamond অর্ডার করতে চাই। দাম: ৳25')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 50 Diamond</h3><div class="price">৳130</div><button class="btn primary" onclick="openOrder('আমি imo 50 Diamond অর্ডার করতে চাই। দাম: ৳130')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 100 Diamond</h3><div class="price">৳240</div><button class="btn primary" onclick="openOrder('আমি imo 100 Diamond অর্ডার করতে চাই। দাম: ৳240')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 200 Diamond</h3><div class="price">৳470</div><button class="btn primary" onclick="openOrder('আমি imo 200 Diamond অর্ডার করতে চাই। দাম: ৳470')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 300 Diamond</h3><div class="price">৳700</div><button class="btn primary" onclick="openOrder('আমি imo 300 Diamond অর্ডার করতে চাই। দাম: ৳700')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 400 Diamond</h3><div class="price">৳930</div><button class="btn primary" onclick="openOrder('আমি imo 400 Diamond অর্ডার করতে চাই। দাম: ৳930')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 500 Diamond</h3><div class="price">৳1,140</div><button class="btn primary" onclick="openOrder('আমি imo 500 Diamond অর্ডার করতে চাই। দাম: ৳1,140')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">📦</div><h3>💎 600 Diamond</h3><div class="price">৳1,380</div><button class="btn primary" onclick="openOrder('আমি imo 600 Diamond অর্ডার করতে চাই। দাম: ৳1,380')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="instagram"><div class="title"><h2>📸 Instagram Price</h2><p>Instagram সার্ভিসের প্যাকেজ বেছে নিয়ে অর্ডার করুন</p></div><div class="grid">
+<div class="card"><div class="icon">📸</div><h3>100 Followers</h3><div class="price">৳50</div><button class="btn primary" onclick="openOrder('আমি Instagram 100 Followers অর্ডার করতে চাই। দাম: ৳50')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="tiktok"><div class="title"><h2>🎵 TikTok Price</h2><p>TikTok সার্ভিসের প্যাকেজ বেছে নিয়ে অর্ডার করুন</p></div><div class="grid">
+<div class="card"><div class="icon">🎵</div><h3>100 Followers</h3><div class="price">৳60</div><button class="btn primary" onclick="openOrder('আমি TikTok 100 Followers অর্ডার করতে চাই। দাম: ৳60')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="youtube"><div class="title"><h2>▶️ YouTube Price</h2><p>YouTube সার্ভিসের প্যাকেজ বেছে নিয়ে অর্ডার করুন</p></div><div class="grid">
+<div class="card"><div class="icon">💬</div><h3>100 Comments</h3><div class="price">৳50</div><button class="btn primary" onclick="openOrder('আমি YouTube 100 Comments অর্ডার করতে চাই। দাম: ৳50')">🛒 অর্ডার করুন</button></div>
+<div class="card"><div class="icon">▶️</div><h3>100 Subscribers</h3><div class="price">৳280</div><button class="btn primary" onclick="openOrder('আমি YouTube 100 Subscribers অর্ডার করতে চাই। দাম: ৳280')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="whatsapp"><div class="title"><h2>💬 WhatsApp Price</h2><p>WhatsApp Channel সার্ভিসের প্যাকেজ বেছে নিয়ে অর্ডার করুন</p></div><div class="grid">
+<div class="card"><div class="icon">💬</div><h3>100 Members</h3><div class="price">৳15</div><button class="btn primary" onclick="openOrder('আমি WhatsApp Channel 100 Members অর্ডার করতে চাই। দাম: ৳15')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="telegram"><div class="title"><h2>✈️ Telegram Price</h2><p>Telegram Channel সার্ভিসের প্যাকেজ বেছে নিয়ে অর্ডার করুন</p></div><div class="grid">
+<div class="card"><div class="icon">✈️</div><h3>100 Members</h3><div class="price">৳40</div><button class="btn primary" onclick="openOrder('আমি Telegram Channel 100 Members অর্ডার করতে চাই। দাম: ৳40')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="twitch"><div class="title"><h2>🎮 Twitch Price</h2><p>Twitch Followers service</p></div><div class="grid">
+<div class="card"><div class="icon">🎮</div><h3>100 Followers</h3><div class="price">৳20</div><button class="btn primary" onclick="openOrder('আমি Twitch 100 Followers অর্ডার করতে চাই। দাম: ৳20')">🛒 অর্ডার করুন</button></div>
+</div></section>
+
+<section id="contact"><div class="contact"><h2>অর্ডার করতে যোগাযোগ করুন</h2><p style="margin:10px 0 22px">সার্ভিসের নাম লিখে যোগাযোগ করুন।</p><button class="btn primary" onclick="openOrder('আমি Hasan Vai-এর একটি সার্ভিস অর্ডার করতে চাই।')">🛒 Order করুন</button></div></section>
+</main>
+
+<footer>© 2026 Hasan Vai — Social Media Service</footer>
+
+<div id="orderModal"><div class="order-box">
+<h2>📦 অর্ডার করুন</h2><p>যোগাযোগের মাধ্যম বেছে নিন</p>
+<a class="order-option imo" href="https://imo.im/" target="_blank" rel="noopener" onclick="closeOrder()">📱 imo — 01782242264</a>
+<a id="whatsappOrder" class="order-option whatsapp" href="#" target="_blank" rel="noopener" onclick="closeOrder()">🟢 WhatsApp — 01887928771</a>
+<button class="close-btn" type="button" onclick="closeOrder()">❌ বন্ধ করুন</button>
+</div></div>
+
+<script>
+const WHATSAPP_NUMBER="8801887928771";
+function openOrder(message){
+  const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
+  document.getElementById("whatsappOrder").href=url;
+  document.getElementById("orderModal").style.display="flex";
+}
+function closeOrder(){document.getElementById("orderModal").style.display="none"}
+document.getElementById("orderModal").addEventListener("click",function(e){if(e.target===this)closeOrder()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeOrder()});
+</script>
+</body>
+</html>
